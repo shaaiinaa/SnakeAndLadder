@@ -77,7 +77,7 @@ const Game = ({ row, column, emoji1, emoji2 }) => {
   const [dice, setDice] = useState({ value: 0, id: 0 });
   const [user1, setUser1] = useState(1);
   const [user2, setUser2] = useState(1);
-  const [turn, setTurn] = useState(1);
+  const [turn, setTurn] = useState(0);
   const [showDice, setShowDice] = useState(true);
   const [path, setPath] = useState([]);
   const [gameSpeed, setGameSpeed] = useState("1");
@@ -96,6 +96,8 @@ const Game = ({ row, column, emoji1, emoji2 }) => {
   }
   const endgame = () => {
     navigate("/");
+    arr1 = [];
+    arr2 = [];
   };
   useEffect(() => {
     if (dice.value > 0) {
@@ -169,7 +171,7 @@ const Game = ({ row, column, emoji1, emoji2 }) => {
 
   return (
     <>
-      <div class="player1-details">
+      <div className="player1-details">
         <h1>
           {row}
           {emoji1}
@@ -180,6 +182,7 @@ const Game = ({ row, column, emoji1, emoji2 }) => {
           setDice={setDice}
           dice={dice}
           turn={turn}
+          setTurn={setTurn}
           row={row}
           column={column}
           emoji1={emoji1}
@@ -191,7 +194,7 @@ const Game = ({ row, column, emoji1, emoji2 }) => {
           <span className="array-style">{arr1}</span>
         </div>
       </div>
-      <div class="player2-details">
+      <div className="player2-details">
         <h1>
           {column} {emoji2}
         </h1>
@@ -201,6 +204,7 @@ const Game = ({ row, column, emoji1, emoji2 }) => {
           setDice={setDice}
           dice={dice}
           turn={turn}
+          setTurn={setTurn}
           row={row}
           column={column}
           emoji1={emoji1}
@@ -212,7 +216,7 @@ const Game = ({ row, column, emoji1, emoji2 }) => {
           <span className="array-style">{arr2}</span>
         </div>
       </div>
-      <img class="game-fountain" src={fountainImage} />
+      <img className="game-fountain" src={fountainImage} />
       <div
         className="grid"
         style={{

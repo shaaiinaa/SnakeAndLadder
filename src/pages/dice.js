@@ -7,10 +7,14 @@ import dice4 from "./dice4.png";
 import dice5 from "./dice5.png";
 import dice6 from "./dice6.png";
 import dicePerspective from "./diceperspective2.jpg";
-const Dice = ({ id, setDice, turn, dice, gameSpeed }) => {
+const Dice = ({ id, setDice, turn, dice, gameSpeed, setTurn }) => {
   const [active, setActive] = useState("");
 
   const handleClick = () => {
+    if (turn == 0) {
+      setTurn(Number(id));
+      console.log("Turn0");
+    }
     console.log(dice.value);
     setActive("active");
     setTimeout(() => {
@@ -41,7 +45,7 @@ const Dice = ({ id, setDice, turn, dice, gameSpeed }) => {
   return (
     <>
       <div
-        onClick={turn == id ? handleClick : null}
+        onClick={turn == id || turn == 0 ? handleClick : null}
         className={`dice ${active}`}
       >
         {active !== "active" ? diceFace : null}

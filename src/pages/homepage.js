@@ -21,7 +21,7 @@ const Homepage = ({ setColumn, setRow, setEmoji1, setEmoji2 }) => {
   };
   return (
     <>
-      <div class="box">
+      <div className="box">
         <Box
           id="box1"
           name="first"

@@ -10,7 +10,7 @@ const App = () => {
   const [row, setRow] = useState("");
   const [column, setColumn] = useState("");
   const [emoji1, setEmoji1] = useState("🐼");
-  const [emoji2, setEmoji2] = useState("🤖");
+  const [emoji2, setEmoji2] = useState("🐼");
 
   const router = createBrowserRouter([
     {
