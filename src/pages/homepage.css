@@ -1,0 +1,59 @@
+.box {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  background-color: rgb(81, 139, 0);
+  width: 500px;
+  margin: 100px auto;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  border-radius: 10px;
+}
+.input {
+  margin-top: 15px;
+  outline: none;
+  padding: 10px;
+  border-radius: 10px;
+  width: 250px;
+  border: none;
+}
+.label {
+  display: flex;
+  color: white;
+  font-size: 30px;
+  font-weight: 500;
+}
+body {
+  background-image: url("./gameback.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#box-button {
+  margin-top: 30px;
+  margin-left: 10px;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 10px;
+  color: coral;
+  background-color: black;
+  cursor: pointer;
+  font-size: 25px;
+  font-weight: 500px;
+}
+.home-link {
+  text-decoration: none;
+  color: inherit;
+}
+.homepage-select {
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+}
+.homepage-label {
+  padding-left: 10px;
+  padding-right: 3px;
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+}

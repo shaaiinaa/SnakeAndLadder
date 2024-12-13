@@ -1,0 +1,195 @@
+.grid-item {
+  /* width: 200px;
+  height: 200px; */
+  background-color: white;
+  border: 3px solid pink;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* z-index: -1; */
+
+  &.highlight-path1 {
+    position: relative;
+    background-color: rgb(8, 148, 45, 0.7);
+    z-index: 2;
+  }
+
+  &.highlight-path2 {
+    position: relative;
+    background-color: rgb(237, 30, 137, 0.7);
+    z-index: 2;
+  }
+}
+.grid {
+  margin: auto;
+  height: 90vh;
+  width: 90vw;
+  max-width: 900px;
+  max-height: 900px;
+  margin: 5vh auto;
+  /* background-image: url("./snakeladdersboard1.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%; */
+  /* opacity: 0.5; */
+  /* z-index: 100; */
+  position: relative;
+}
+.image {
+  /* opacity: 0.7;
+  background-image: url("./snakeladdersboard1.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+  width: 100%;
+  
+  height: 100%;
+  
+  object-fit: cover; */
+  opacity: 1;
+  padding: 0;
+  position: absolute;
+  /* top: 0;
+  left: 0; */
+  height: 100%;
+  width: 100%;
+  /* opacity: 0.4; */
+  /* padding: 8px; */
+}
+.game-players {
+  font-size: 50px;
+  z-index: 5;
+  text-shadow: rgb(179, 176, 176) 1px 0 10px;
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.game-redbox {
+  z-index: 2;
+}
+.game-text {
+  font-size: 18px;
+  color: white;
+  background-color: black;
+  border-radius: 10px;
+  padding: 6px;
+  position: relative;
+  bottom: -1rem;
+}
+.user-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  &:first-of-type {
+    left: 25%;
+  }
+  &:last-of-type {
+    left: 75%;
+  }
+  &:only-of-type {
+    left: 50%;
+  }
+}
+.game-fountain {
+  left: 4px;
+  bottom: 0px;
+  position: absolute;
+  height: 300px;
+  width: 200px;
+  z-index: 2;
+}
+.player1-details {
+  background-color: rgb(255, 0, 123);
+  color: rgb(52, 20, 20);
+  padding: 10px;
+  z-index: 2;
+  position: absolute;
+  top: 20px;
+  left: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  max-width: 300px;
+}
+.player2-details {
+  background-color: rgb(66, 232, 168);
+  color: rgb(48, 49, 49);
+  padding: 10px;
+  z-index: 2;
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  max-width: 300px;
+}
+.array-style {
+  padding: 6px;
+  background-color: white;
+  letter-spacing: 8px;
+  color: brown;
+}
+.reset {
+  background-color: rgb(202, 5, 5);
+  color: white;
+  padding: 20px;
+  border-radius: 100%;
+  margin-top: 50px;
+  cursor: pointer;
+  font-size: larger;
+  position: absolute;
+  right: 5vw;
+  bottom: 10vh;
+}
+.winner-box {
+  z-index: 6;
+  position: absolute;
+  top: 30%;
+  left: 30%;
+  height: 400px;
+  background-color: rgb(48, 7, 86);
+  color: honeydew;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  width: 400px;
+}
+.replay {
+  border-radius: 30px;
+  padding: 25px;
+  color: chocolate;
+  background-color: darkmagenta;
+  border: none;
+}
+.endgame {
+  border-radius: 30px;
+  padding: 25px;
+  color: rgb(11, 184, 211);
+  background-color: rgb(74, 139, 0);
+  border: none;
+}
+.speed {
+  right: 5vw;
+  bottom: 40vh;
+  position: absolute;
+  padding: 20px;
+  border: none;
+  background-color: rgb(10, 106, 157);
+  color: rgb(226, 196, 196);
+  font-size: larger;
+  border-radius: 30px;
+  text-align: center;
+  border: none;
+  outline: none;
+}

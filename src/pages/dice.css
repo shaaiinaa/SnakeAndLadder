@@ -1,0 +1,67 @@
+.dice {
+  width: 150px;
+  height: 150px;
+  background-color: rgb(9, 53, 86);
+  color: white;
+  font-weight: 500px;
+  font-size: xx-large;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 6;
+  /* top: 40%;
+  left: 45%; */
+  /* z-index: 6; */
+}
+
+.active {
+  background-image: url("./dice-game.gif");
+  background-size: 150px 150px;
+  /* z-index: 7; */
+}
+
+/* .active1 {
+  display: block;
+  z-index: 100;
+  position: absolute;
+  top: 30%;
+  left: 45%;
+  color: rgb(149, 8, 8);
+  background-color: rgb(133, 183, 41);
+  padding: 6px;
+  border-radius: 8px;
+}
+.active2 {
+  display: block;
+  z-index: 100;
+  position: absolute;
+  top: 30%;
+  left: 45%;
+  color: rgb(163, 12, 161);
+  background-color: rgb(231, 130, 71);
+  padding: 6px;
+  border-radius: 8px;
+} */
+.player-name {
+  display: none;
+  z-index: 100;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+.dice-face {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  /* z-index: 4; */
+}
+.dice1 {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  display: none;
+}
+.active1 {
+  display: block;
+}
