@@ -115,7 +115,6 @@
   align-items: center;
   justify-content: center;
   gap: 30px;
-  max-width: 300px;
 }
 .player2-details {
   background-color: rgb(66, 232, 168);
@@ -130,13 +129,14 @@
   align-items: center;
   justify-content: center;
   gap: 30px;
-  max-width: 300px;
 }
 .array-style {
   padding: 6px;
   background-color: white;
   letter-spacing: 8px;
   color: brown;
+  max-width: 140px;
+  overflow-wrap: break-word;
 }
 .reset {
   background-color: rgb(202, 5, 5);
@@ -181,7 +181,7 @@
 }
 .speed {
   right: 5vw;
-  bottom: 40vh;
+  bottom: 30vh;
   position: absolute;
   padding: 20px;
   border: none;

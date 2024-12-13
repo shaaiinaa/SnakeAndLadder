@@ -101,7 +101,8 @@ const Game = ({ row, column, emoji1, emoji2 }) => {
   };
   useEffect(() => {
     if (dice.value > 0) {
-      setTimeout(() => setShowDice(false), 2000 / gameSpeed);
+      //   setTimeout(() => setShowDice(false), 2000 / gameSpeed);
+      setShowDice(false);
       if (turn == 1) {
         let r = dice.value;
         arr1.unshift(r);
@@ -191,7 +192,7 @@ const Game = ({ row, column, emoji1, emoji2 }) => {
         />
         {/* ) : null} */}
         <div className="game-history">
-          <span className="array-style">{arr1}</span>
+          <div className="array-style">{arr1}</div>
         </div>
       </div>
       <div className="player2-details">
@@ -213,7 +214,7 @@ const Game = ({ row, column, emoji1, emoji2 }) => {
         />
         {/* ) : null} */}
         <div className="game-history">
-          <span className="array-style">{arr2}</span>
+          <div className="array-style">{arr2}</div>
         </div>
       </div>
       <img className="game-fountain" src={fountainImage} />
