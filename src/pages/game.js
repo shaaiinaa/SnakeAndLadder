@@ -68,19 +68,39 @@ const ladders = [
     end: 50,
   },
 ];
-let arr1 = [];
-let arr2 = [];
+// let arr1 = [];
+// let arr2 = [];
 
 const Game = ({ row, column, emoji1, emoji2 }) => {
   const navigate = useNavigate();
-
+  const defaultValue12 = localStorage.getItem("arr1");
+  const data12 = defaultValue12 ? JSON.parse(defaultValue12) : [];
+  const [arr1, setArr1] = useState(data12);
+  const defaultValue13 = localStorage.getItem("arr2");
+  const data13 = defaultValue13 ? JSON.parse(defaultValue13) : [];
+  const [arr2, setArr2] = useState(data13);
+  // const defaultValue1 = localStorage.getItem("dice");
+  // const data1 = defaultValue1 ? JSON.parse(defaultValue1) : { value: 0, id: 0 };
   const [dice, setDice] = useState({ value: 0, id: 0 });
-  const [user1, setUser1] = useState(1);
-  const [user2, setUser2] = useState(1);
-  const [turn, setTurn] = useState(0);
-  const [showDice, setShowDice] = useState(true);
-  const [path, setPath] = useState([]);
-  const [gameSpeed, setGameSpeed] = useState("1");
+  // const [dice, setDice] = useState({ value: 0, id: 0 });
+  const defaultValue2 = localStorage.getItem("user1");
+  const data = defaultValue2 ? Number(defaultValue2) : 1;
+  const [user1, setUser1] = useState(data);
+  const defaultValue3 = localStorage.getItem("user2");
+  const data3 = defaultValue3 ? Number(defaultValue3) : 1;
+  const [user2, setUser2] = useState(data3);
+  const defaultValue5 = localStorage.getItem("turn");
+  const data5 = defaultValue5 ? Number(defaultValue5) : 0;
+  const [turn, setTurn] = useState(data5);
+  const defaultValue6 = localStorage.getItem("showDice");
+  const data6 = defaultValue6 ? Boolean(defaultValue6) : true;
+  const [showDice, setShowDice] = useState(data6);
+  const defaultValue4 = localStorage.getItem("path");
+  const data4 = defaultValue4 ? JSON.parse(defaultValue4) : [];
+  const [path, setPath] = useState(data4);
+  const defaultValue7 = localStorage.getItem("gameSpeed");
+  const data7 = defaultValue7 ? defaultValue7 : "1";
+  const [gameSpeed, setGameSpeed] = useState(data7);
 
   const speedChange = (e) => {
     setGameSpeed(e.target.value);
@@ -88,24 +108,44 @@ const Game = ({ row, column, emoji1, emoji2 }) => {
   const reset = () => {
     setUser1(1);
     setUser2(1);
-    arr1 = [];
-    arr2 = [];
+    // arr1 = [];
+    // arr2 = [];
+    setTurn(0);
+    setArr1([]);
+    setArr2([]);
+    setDice({ value: 0, id: 0 });
   };
   if (row == "" || column == "") {
     navigate("/");
   }
   const endgame = () => {
     navigate("/");
-    arr1 = [];
-    arr2 = [];
+    // arr1 = [];
+    // arr2 = [];
+    setArr1([]);
+    setArr2([]);
   };
+
+  useEffect(() => {
+    localStorage.setItem("user1", user1);
+    localStorage.setItem("user2", user2);
+    localStorage.setItem("turn", turn);
+    localStorage.setItem("showDice", showDice);
+    localStorage.setItem("path", JSON.stringify(path));
+    localStorage.setItem("gameSpeed", gameSpeed);
+    localStorage.setItem("arr1", JSON.stringify(arr1));
+    localStorage.setItem("arr2", JSON.stringify(arr2));
+  }, [turn, user1, user2, gameSpeed, path, showDice, arr1, arr2]);
+
   useEffect(() => {
     if (dice.value > 0) {
       //   setTimeout(() => setShowDice(false), 2000 / gameSpeed);
       setShowDice(false);
       if (turn == 1) {
         let r = dice.value;
-        arr1.unshift(r);
+        let history1 = [...arr1];
+        history1.unshift(r);
+        setArr1(history1);
         console.log(arr1);
         for (let i = 1; i <= dice.value; i++) {
           setTimeout(() => setUser1(user1 + i), ((i + 2) * 1000) / gameSpeed);
@@ -114,7 +154,9 @@ const Game = ({ row, column, emoji1, emoji2 }) => {
       }
       if (turn == 2) {
         let r = dice.value;
-        arr2.unshift(r);
+        let history2 = [...arr2];
+        history2.unshift(r);
+        setArr2(history2);
         console.log(arr2);
         for (let i = 1; i <= dice.value; i++) {
           setTimeout(() => setUser2(user2 + i), ((i + 2) * 1000) / gameSpeed);
@@ -315,7 +357,7 @@ const Game = ({ row, column, emoji1, emoji2 }) => {
           );
         })}
       </div>
-      <select className="speed" onClick={speedChange}>
+      <select className="speed" onChange={speedChange} value={gameSpeed}>
         <option value="1">Slow</option>
         <option value="1.5">Normal</option>
         <option value="2">Fast</option>

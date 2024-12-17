@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import "./homepage.css";
 import Box from "./components/Box";
+import { useEffect } from "react";
 const Homepage = ({ setColumn, setRow, setEmoji1, setEmoji2 }) => {
   const navigate = useNavigate();
   const changeRow = (e) => {
@@ -19,6 +20,9 @@ const Homepage = ({ setColumn, setRow, setEmoji1, setEmoji2 }) => {
   const handleClick = () => {
     navigate("/game");
   };
+  useEffect(() => {
+    localStorage.clear();
+  }, []);
   return (
     <>
       <div className="box">

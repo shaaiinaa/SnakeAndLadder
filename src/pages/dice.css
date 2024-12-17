@@ -9,7 +9,7 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  z-index: 6;
+  /* z-index: 6; */
   /* top: 40%;
   left: 45%; */
   /* z-index: 6; */
@@ -54,6 +54,9 @@
   width: 150px;
   height: 150px;
   position: absolute;
+  align-items: center;
+  justify-content: center;
+  display: flex;
   /* z-index: 4; */
 }
 .dice1 {

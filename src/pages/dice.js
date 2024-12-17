@@ -9,6 +9,7 @@ import dice6 from "./dice6.png";
 import dicePerspective from "./diceperspective2.jpg";
 const Dice = ({ id, setDice, turn, dice, gameSpeed, setTurn }) => {
   const [active, setActive] = useState("");
+  console.log(active, turn, id);
 
   const handleClick = () => {
     if (turn == 0) {
@@ -20,6 +21,7 @@ const Dice = ({ id, setDice, turn, dice, gameSpeed, setTurn }) => {
     setTimeout(() => {
       setActive("");
       setDice({ value: randomNumber(1, 6), id: dice.id + 1 });
+      localStorage.setItem("dice", dice);
     }, 1500 / gameSpeed);
   };
   const randomNumber = (min, max) => {
@@ -27,7 +29,7 @@ const Dice = ({ id, setDice, turn, dice, gameSpeed, setTurn }) => {
     return (Date.now() % 6) + 1;
   };
   const handleFace = () => {};
-  let diceFace = <div className="dice">Start</div>;
+  let diceFace = <div className="dice-face">Start</div>;
 
   if (dice.value == 1) {
     diceFace = <img className="dice-face" src={dice1} alt="dice1" />;

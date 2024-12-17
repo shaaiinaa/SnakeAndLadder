@@ -7,10 +7,23 @@ const parent = document.getElementById("parent");
 const root = ReactDOM.createRoot(parent);
 
 const App = () => {
-  const [row, setRow] = useState("");
-  const [column, setColumn] = useState("");
-  const [emoji1, setEmoji1] = useState("🐼");
-  const [emoji2, setEmoji2] = useState("🐼");
+  const defaultValue8 = localStorage.getItem("row");
+  const data8 = defaultValue8 ? defaultValue8 : "";
+  const [row, setRow] = useState(data8);
+  const defaultValue9 = localStorage.getItem("column");
+  const data9 = defaultValue9 ? defaultValue9 : "";
+  const [column, setColumn] = useState(data9);
+  const defaultValue10 = localStorage.getItem("emoji1");
+  const data10 = defaultValue10 ? defaultValue10 : "";
+  const [emoji1, setEmoji1] = useState(data10);
+  const defaultValue11 = localStorage.getItem("emoji2");
+  const data11 = defaultValue11 ? defaultValue11 : "";
+  const [emoji2, setEmoji2] = useState(data11);
+
+  localStorage.setItem("row", row);
+  localStorage.setItem("column", column);
+  localStorage.setItem("emoji1", "🐼");
+  localStorage.setItem("emoji2", "🐼");
 
   const router = createBrowserRouter([
     {
@@ -23,6 +36,8 @@ const App = () => {
           setColumn={setColumn}
           setEmoji1={setEmoji1}
           setEmoji2={setEmoji2}
+          emoji1={emoji1}
+          emoji2={emoji2}
         />
       ),
     },
